@@ -234,14 +234,22 @@ console.log(sep)
 ////////// CHALLENGE //////////
 console.log(`Challenge:`)
 /*
-  You'll be writing a higher order function that returns another function. 
-  Create a function called addingFactory that takes in one parameter (it will be a number).
-  addingFactory should return a function that takes in one parameter (this will be another number).
-  The (inner) function that's being returned should add the two parameters together and return the sum.
+  You'll be writing a higher order function that returns 
+  another function. Create a function called addingFactory 
+  that takes in one parameter (it will be a number). 
+  addingFactory should return a function that takes in one 
+  parameter (this will be another number). The (inner) function 
+  that's being returned should add the two parameters together 
+  and return the sum.
 */
 
 // CODE HERE
-
+const addingFactory = (num1) => {
+  const anotherFunc = (num2) => {
+    let sum = num1 + num2
+    return sum
+  }
+}
 
 /*
   Now that you have addingFactory, you can create other
@@ -256,6 +264,8 @@ console.log(`Challenge:`)
 */
 
 // CODE HERE
+newVariable = addingFactory(1, 2)
+console.log(newVariable)
 
 /*
   Now the inner function is stored in the addTen variable! 

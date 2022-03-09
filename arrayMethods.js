@@ -5,6 +5,9 @@
 */
 
 ////////// PROBLEM 1 //////////
+let sep = `-----------------`
+console.log(sep)
+console.log(`Problem 1:`)
 
 // Do not edit the code below.
 const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
@@ -17,33 +20,34 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
-// CODE HERE
-const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+// // CODE HERE
+const evenNumbers = mixedNumbers.filter(element => element % 2 === 0)
+console.log(evenNumbers)
 
-
-
+console.log(sep)
 ////////// PROBLEM 2 //////////
+console.log(`Problem 2:`)
 
 // Do not edit the code below.
 const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 // Do not edit the code above.
 
 /*
-  Use the map method on the prices array to calculate a new array of post-tax prices.
-  Use a 7% tax rate.
+  Use the map method on the prices array to calculate a new array of post-tax prices. Use a 7% tax rate.
   Math reminder! To calculate the price after tax, multiply the price by 1 plus the taxRate as a decimal.
   Example: if tax is 7%, the price afterTax could be calculated like this: afterTax = price * 1.07) 
-  The map function also takes a callback with the parameters
-  function(element, index, wholeArray){}  Function Form
+  The map function also takes a callback with the parameters function(element, index, wholeArray){}  Function Form
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
 // CODE HERE
-const postTaxPrices // = prices.map(/* Provide Your Callback Here );
+const postTaxPrices = prices.map(element => element * 1.07);
+console.log(postTaxPrices)
 
 
-
+console.log(sep)
 ////////// PROBLEM 3 //////////
+console.log(`Problem 3: `)
 
 // Do not edit the code below.
 const populations = [8175133, 3792621, 2695598, 2100263];
@@ -57,11 +61,12 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+const totalPopulation  = populations.reduce((acc, cv) => acc + cv)
+console.log(totalPopulation)
 
-
-
+console.log(sep)
 ////////// PROBLEM 4 //////////
+console.log(`Problem 4:`)
 
 // Do not edit the code below.
 const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulbabunny","CP":135},
@@ -82,11 +87,12 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+const myStrongest = monstersInYourPocket.filter(element => element.CP > 200)
+console.log(myStrongest)
 
-
-
+console.log(sep)
 ////////// PROBLEM 5 //////////
+console.log(`Problem 5:`)
 
 // Do not edit code below.
 const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax":0.11},
@@ -96,13 +102,19 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 // Do not edit code above.
 
 /*
-  Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
+  Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do 
+  some multiplication). Your answer should be an array of numbers, one total for each order.
 */
 
 // CODE HERE
 
+const orderTotals = orders.map(order => {
+  return order.price * (1 + order.tax)
+})
 
+console.log(orderTotals)
 
+console.log(sep)
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -120,3 +132,6 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+let bobsOrders = purchases.filter(order => order.owner === 'Bob')
+
+console.log(bobsOrders)

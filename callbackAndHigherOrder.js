@@ -138,20 +138,23 @@ const uniq = (arr, callback) => {
       newArray.push(item)
     }
   })
+  callback(newArray)
 }
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
-  The callback function should take in one parameter called uniqArr.
-  The callback should print a string that says:
+  The callback function should take in one parameter called uniqArr. The callback should print a string that says:
   'The new names array with all the duplicate items removed is [UNIQARRPARAM].'
 */
 
 // CODE HERE
-uniq([`one`, `two`, `three`], callback)
+uniq(names, anon => {
+  console.log(`The new names array with all the duplicate items removed is ` + anon)
+})
 
-
+console.log(sep)
 ////////// PROBLEM 6 //////////
+console.log(`Problem 6:`)
 
 /* 
   Write a function called each that takes in an array of names and a callback function. 
@@ -159,22 +162,30 @@ uniq([`one`, `two`, `three`], callback)
 */
 
 // CODE HERE 
-
+const each = (arr, callback) => {
+  arr.forEach((item, index) => {
+    callback(item, index)
+  })
+}
 
 /*
-  Invoke the each function, passing in the names array and a callback function.
-  The callback function should take in two paremeters, item and index.
-  The callback should print a string that says:
+  Invoke the each function, passing in the names array and a callback function. The callback function should 
+  take in two parameters, item and index. The callback should print a string that says:
   'The item at index [INDEXPARAM] is [ITEMPARAM].'
 */
 
 // CODE HERE
+each(names, (item, index) => {
+  console.log(`The item at index `, index, ` is `, item)
+})
 
+console.log(sep)
 ////////// PROBLEM 7 //////////
+console.log(`Problem 7:`)
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
-  When the correct user object is found, invoke the callback with the user object as an argument.
+  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and 
+  searches for the user with a matching id. When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
 // Do not edit the code below.
@@ -201,33 +212,36 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
+const getUserById = (arr, ident, callback) => {
+  arr.forEach(user => {
+    if (user.id === ident) {
+      callback(user)
+      console.log(user)
+    }
+  })
+}
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, '15a', user => {
+  console.log('The user with the id ' + user.id + ' has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+})
 
+console.log(sep)
 ////////// CHALLENGE //////////
-
+console.log(`Challenge:`)
 /*
-  You'll be writing a higher order function that returns
-  another function. 
-
-  Create a function called addingFactory that takes in
-  one parameter (it will be a number).
-
-  addingFactory should return a function that takes in
-  one parameter (this will be another number).
-
-  The (inner) function that's being returned should add
-  the two parameters together and return the sum.
+  You'll be writing a higher order function that returns another function. 
+  Create a function called addingFactory that takes in one parameter (it will be a number).
+  addingFactory should return a function that takes in one parameter (this will be another number).
+  The (inner) function that's being returned should add the two parameters together and return the sum.
 */
 
 // CODE HERE
+
 
 /*
   Now that you have addingFactory, you can create other
@@ -267,3 +281,7 @@ var users = [
 */
 
 // CODE HERE
+
+
+
+console.log(sep)

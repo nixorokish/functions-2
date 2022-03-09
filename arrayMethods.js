@@ -133,5 +133,7 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 // CODE HERE
 let bobsOrders = purchases.filter(order => order.owner === 'Bob')
-
 console.log(bobsOrders)
+
+let bobsTotal = bobsOrders.reduce((acc, cv) => {acc + cv.price}, 0)
+console.log(bobsTotal)

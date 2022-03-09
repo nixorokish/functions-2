@@ -122,6 +122,7 @@ contains(names, 'Colt', result => {
 
 console.log(sep)
 ////////// PROBLEM 5 //////////
+console.log(`Problem 5:`)
 
 /*
   Write a function called uniq that takes in an array and a callback function.
@@ -130,6 +131,14 @@ console.log(sep)
 */
 
 // CODE HERE
+const uniq = (arr, callback) => {
+  newArray = []
+  arr.forEach(item => {
+    if (!newArray.includes(item) === true) {
+      newArray.push(item)
+    }
+  })
+}
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -139,6 +148,7 @@ console.log(sep)
 */
 
 // CODE HERE
+uniq([`one`, `two`, `three`], callback)
 
 
 ////////// PROBLEM 6 //////////
